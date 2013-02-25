@@ -15,10 +15,12 @@ import org.slf4j.LoggerFactory;
 @SuiteClasses( { XTest1.class, XTest2.class } )
 public class TestSuite {
 	
-	protected static Logger logger = LoggerFactory.getLogger( "JUnit" );
+	public static Logger logger = LoggerFactory.getLogger( "JUnit" );
 
     @BeforeClass
-    public static void beforeClass() {
+    public static void beforeClass() {    
+    	
+    	logger.info("START");
     	logger.info("TestSuite:beforeClass");
     }
     
