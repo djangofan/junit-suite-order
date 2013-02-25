@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+group = 'com.test'
+
+ext {
+    projTitle = 'Test JUnit Annotation Order'
+    projVersion = '1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.+'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.+'
+}
+
+tasks.withType(Test) {
+    jvmArgs '-Xms128m', '-Xmx1024m', '-XX:MaxPermSize=128m'
+    maxParallelForks = 1
+    testLogging {
+        exceptionFormat "full"
+        events "started", "passed", "skipped", "failed", "standardOut", "standardError"
+        displayGranularity = 0
+    }
+    forkEvery = 0
+}
+
+task testSuite(type: Test) {
+    include '**/TestSuite.class'
+    testReportDir = file("${reporting.baseDir}/TestSuite")
+    testResultsDir = file("${buildDir}/test-results/TestSuite")
+}
