@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 @SuiteClasses( { XTest1.class, XTest2.class } )
 public class TestSuite {
 	
-	public static Logger logger = LoggerFactory.getLogger( "JUnit" );
+	protected static Logger logger = LoggerFactory.getLogger( "JUnit" );
 
     @BeforeClass
     public static void beforeClass() {
@@ -23,17 +23,17 @@ public class TestSuite {
     }
     
     @Before
-    public void setUp() { // not called?
+    public void setUp() { // not called by JUnit runner?
     	logger.info("TestSuite:setUp");
     }
     
     @Test
-    public void suite() {
+    public void suite() { // not called by JUnit runner?
     	logger.info("TestSuite:suite");
     }
     
     @After
-    public void tearDown() { // not called?
+    public void tearDown() { // not called by JUnit runner?
     	logger.info("TestSuite:tearDown");
     }
 

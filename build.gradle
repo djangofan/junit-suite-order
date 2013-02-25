@@ -19,7 +19,7 @@ dependencies {
 
 tasks.withType(Test) {
     jvmArgs '-Xms128m', '-Xmx1024m', '-XX:MaxPermSize=128m'
-    maxParallelForks = 2
+    maxParallelForks = 4
     testLogging {
         exceptionFormat "full"
         events "started", "passed", "skipped", "failed", "standardOut", "standardError"
@@ -33,3 +33,11 @@ task testSuite(type: Test) {
     testReportDir = file("${reporting.baseDir}/TestSuite")
     testResultsDir = file("${buildDir}/test-results/TestSuite")
 }
+
+task testWithoutSuite(type: Test) {
+    // this method seems to fork correctly
+    include '**/XTest*.class'
+    testReportDir = file("${reporting.baseDir}/XTest")
+    testResultsDir = file("${buildDir}/test-results/XTest")
+}
+
