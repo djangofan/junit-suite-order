@@ -8,19 +8,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @RunWith(Suite.class)
 @SuiteClasses( { XTest1.class, XTest2.class } )
-public class TestSuite {
-	
-	protected static Logger logger = LoggerFactory.getLogger( "JUnit" );
+public class TestSuite extends StaticUtils {
 
     @BeforeClass
     public static void beforeClass() {     	
-    	logger.info("START");
-    	logger.info("TestSuite:beforeClass");
+    	staticlogger.info("START");
+    	staticlogger.info("TestSuite:beforeClass");
     }
     
     @Before
@@ -40,24 +36,7 @@ public class TestSuite {
 
     @AfterClass
     public static void afterClass() {
-    	logger.info("TestSuite:afterClass");
+    	staticlogger.info("TestSuite:afterClass");
     }
     
-	public static void waitTimer( int units, int mills ) {
-    	//DecimalFormat df = new DecimalFormat("###.##");
-		//double totalSeconds = ((double)units*mills)/1000;
-		//logger.info("Explicit pause for " + df.format(totalSeconds) + " seconds divided by " + units + " units of time: ");
-		try {
-			Thread.currentThread();		
-			int x = 0;
-			while( x < units ) {
-				Thread.sleep( mills );
-				//logger.info(".");
-				x = x + 1;
-			}
-		} catch ( InterruptedException ex ) {
-			ex.printStackTrace();
-		}	
-	}
-
 }

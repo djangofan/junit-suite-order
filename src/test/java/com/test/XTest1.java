@@ -5,13 +5,12 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static com.test.TestSuite.*;
 
-public class XTest1 {
+public class XTest1 extends StaticUtils{
 	
     @Test
     public void test11() {
-    	String msg = "test11:id=" + Thread.currentThread().getId();
+    	String msg = "test11";
     	logger.info( msg );
     	System.out.println( msg );
     	waitTimer(4, 250); // 1 second
@@ -19,7 +18,7 @@ public class XTest1 {
     
     @Test
     public void test12() {
-    	String msg = "test12:id=" + Thread.currentThread().getId();
+    	String msg = "test12";
     	logger.info( msg );
     	System.out.println( msg );
     	waitTimer(12, 250); // 3 second
@@ -27,7 +26,7 @@ public class XTest1 {
     
     @Test
     public void test13() {
-    	String msg = "test13:id=" + Thread.currentThread().getId();
+    	String msg = "test13";
     	logger.info( msg );
     	System.out.println( msg );
     	waitTimer(16, 250); // 4 second
@@ -35,7 +34,7 @@ public class XTest1 {
     
     @Test
     public void test14() {
-    	String msg = "test14:id=" + Thread.currentThread().getId();
+    	String msg = "test14";
     	logger.info( msg );
     	System.out.println( msg );
     	waitTimer(1, 250); // 1 second
@@ -43,14 +42,14 @@ public class XTest1 {
     
     @Test
     public void test15() {
-    	String msg = "test15:id=" + Thread.currentThread().getId();
+    	String msg = "test15";
     	logger.info( msg );
     	System.out.println( msg );
     }
     
     @BeforeClass
     public static void beforeClass() {
-    	logger.info("XTest1:beforeClass");
+    	staticlogger.info("XTest1:beforeClass");
     }
     
     @Before
@@ -65,7 +64,7 @@ public class XTest1 {
 
     @AfterClass
     public static void afterClass() {
-    	logger.info("XTest1:afterClass");
+    	staticlogger.info("XTest1:afterClass");
     }
 
 }

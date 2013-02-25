@@ -36,7 +36,7 @@ task testSuite(type: Test) {
 }
 
 task testWithoutSuite(type: Test) {
-    // this task seems to fork JUnit process correctly
+    // this task seems to fork JUnit process correctly but skips initializing the static logger
     include '**/XTest*.class'
     testReportDir = file("${reporting.baseDir}/XTest")
     testResultsDir = file("${buildDir}/test-results/XTest")
