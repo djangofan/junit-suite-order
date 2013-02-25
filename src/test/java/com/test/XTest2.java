@@ -5,32 +5,53 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import static com.test.TestSuite.logger;
 
 public class XTest2 {
 	
     @Test
-    public void test2() {
-    	System.out.println("XTest2");
+    public void test21() {
+    	logger.info("test21");
+    }
+    
+    @Test
+    public void test22() {
+    	logger.info("test22");
+    }
+    
+    @Test
+    public void test23() {
+    	logger.info("test23");
+    }
+    
+    @Test
+    public void test24() {
+    	logger.info("test24");
+    }
+    
+    @Test
+    public void test25() {
+    	logger.info("test25");
     }
     
     @BeforeClass
     public static void beforeClass() {
-    	System.out.println("XTest2:beforeClass");
+    	logger.info("XTest2:beforeClass");
     }
     
     @Before
     public void setUp() {
-    	System.out.println("XTest2:setUp");
+    	logger.info("XTest2:setUp");
     }
     
     @After
     public void tearDown() {
-    	System.out.println("XTest2:tearDown");
+    	logger.info("XTest2:tearDown");
     }
 
     @AfterClass
     public static void afterClass() {
-    	System.out.println("XTest2:afterClass");
+    	logger.info("XTest2:afterClass");
     }
 
 }
