@@ -15,11 +15,10 @@ import org.slf4j.LoggerFactory;
 @SuiteClasses( { XTest1.class, XTest2.class } )
 public class TestSuite {
 	
-	public static Logger logger = LoggerFactory.getLogger( "JUnit" );
+	protected static Logger logger = LoggerFactory.getLogger( "JUnit" );
 
     @BeforeClass
-    public static void beforeClass() {    
-    	
+    public static void beforeClass() {     	
     	logger.info("START");
     	logger.info("TestSuite:beforeClass");
     }
@@ -43,5 +42,22 @@ public class TestSuite {
     public static void afterClass() {
     	logger.info("TestSuite:afterClass");
     }
+    
+	public static void waitTimer( int units, int mills ) {
+    	//DecimalFormat df = new DecimalFormat("###.##");
+		//double totalSeconds = ((double)units*mills)/1000;
+		//logger.info("Explicit pause for " + df.format(totalSeconds) + " seconds divided by " + units + " units of time: ");
+		try {
+			Thread.currentThread();		
+			int x = 0;
+			while( x < units ) {
+				Thread.sleep( mills );
+				//logger.info(".");
+				x = x + 1;
+			}
+		} catch ( InterruptedException ex ) {
+			ex.printStackTrace();
+		}	
+	}
 
 }

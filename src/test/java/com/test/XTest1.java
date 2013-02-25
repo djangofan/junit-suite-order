@@ -5,33 +5,47 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static com.test.TestSuite.logger;
+import static com.test.TestSuite.*;
 
 public class XTest1 {
 	
     @Test
     public void test11() {
-    	logger.info("test11:id=" + Thread.currentThread().getId() );
+    	String msg = "test11:id=" + Thread.currentThread().getId();
+    	logger.info( msg );
+    	System.out.println( msg );
+    	waitTimer(4, 250); // 1 second
     }
     
     @Test
     public void test12() {
-    	logger.info("test12:id=" + Thread.currentThread().getId() );
+    	String msg = "test12:id=" + Thread.currentThread().getId();
+    	logger.info( msg );
+    	System.out.println( msg );
+    	waitTimer(12, 250); // 3 second
     }
     
     @Test
     public void test13() {
-    	logger.info("test13:id=" + Thread.currentThread().getId() );
+    	String msg = "test13:id=" + Thread.currentThread().getId();
+    	logger.info( msg );
+    	System.out.println( msg );
+    	waitTimer(16, 250); // 4 second
     }
     
     @Test
     public void test14() {
-    	logger.info("test14:id=" + Thread.currentThread().getId() );
+    	String msg = "test14:id=" + Thread.currentThread().getId();
+    	logger.info( msg );
+    	System.out.println( msg );
+    	waitTimer(1, 250); // 1 second
     }
     
     @Test
     public void test15() {
-    	logger.info("test15:id=" + Thread.currentThread().getId() );
+    	String msg = "test15:id=" + Thread.currentThread().getId();
+    	logger.info( msg );
+    	System.out.println( msg );
     }
     
     @BeforeClass

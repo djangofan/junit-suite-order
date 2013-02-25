@@ -29,13 +29,14 @@ tasks.withType(Test) {
 }
 
 task testSuite(type: Test) {
+    // this method fails to fork JUnit process and runs sequential
     include '**/TestSuite.class'
     testReportDir = file("${reporting.baseDir}/TestSuite")
     testResultsDir = file("${buildDir}/test-results/TestSuite")
 }
 
 task testWithoutSuite(type: Test) {
-    // this method seems to fork correctly
+    // this task seems to fork JUnit process correctly
     include '**/XTest*.class'
     testReportDir = file("${reporting.baseDir}/XTest")
     testResultsDir = file("${buildDir}/test-results/XTest")
