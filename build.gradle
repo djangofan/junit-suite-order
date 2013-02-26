@@ -28,15 +28,15 @@ tasks.withType(Test) {
     forkEvery = 0
 }
 
+// this task uses standard JUnit test suite styling
 task testSuite(type: Test) {
-    // this method fails to fork JUnit process and runs sequential
     include '**/TestSuite.class'
     testReportDir = file("${reporting.baseDir}/TestSuite")
     testResultsDir = file("${buildDir}/test-results/TestSuite")
 }
 
+// this task uses Gradle test filter styling without a defined suite
 task testWithoutSuite(type: Test) {
-    // this task seems to fork JUnit process correctly but skips initializing the static logger
     include '**/XTest*.class'
     testReportDir = file("${reporting.baseDir}/XTest")
     testResultsDir = file("${buildDir}/test-results/XTest")
