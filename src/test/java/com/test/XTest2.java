@@ -10,61 +10,61 @@ public class XTest2 extends StaticUtils{
 	
     @Test
     public void test21() {
-    	String msg = "test21";
-    	logger.info( msg );
-    	System.out.println( msg );
+    	classlogger.info( "test21" );
+    	log.println( "test21" );
     	waitTimer(32, 250); // 8 second
     }
     
     @Test
     public void test22() {
-    	String msg = "test22";
-    	logger.info( msg );
-    	System.out.println( msg );
+    	classlogger.info( "test22" );
+    	log.println( "test22" );
     	waitTimer(1, 250); // 1 second
     }
     
     @Test
     public void test23() {
-    	String msg = "test23";
-    	logger.info( msg );
-    	System.out.println( msg );
+    	classlogger.info( "test23" );
+    	log.println( "test23" );
     	waitTimer(4, 250); // 1 second
     }
     
     @Test
     public void test24() {
-    	String msg = "test24";
-    	logger.info( msg );
-    	System.out.println( msg );
+    	classlogger.info( "test24" );
+    	log.println( "test24" );
+    	waitTimer(5, 250); // 1.25 seconds
     }
     
     @Test
     public void test25() {
-    	String msg = "test25";
-    	logger.info( msg );
-    	System.out.println( msg );
-    	waitTimer(4, 250); // 1 second
+    	classlogger.info( "test25" );
+    	log.println( "test25" );
+    	waitTimer(1, 250); // .25 second
     }
     
     @BeforeClass
     public static void beforeClass() {
-    	staticlogger.info("XTest2:beforeClass");
+    	staticlogger.info( "XTest2:beforeClass" );
+    	log.println( "XTest2:beforeClass" );
     }
     
     @Before
     public void setUp() {
-    	logger.info("XTest2:setUp");
+    	classlogger.info("XTest2:setUp");
+    	log.println( "XTest2:setUp" );
     }
     
     @After
     public void tearDown() {
-    	logger.info("XTest2:tearDown");
+    	classlogger.info("XTest2:tearDown");
+    	log.println( "XTest2:tearDown" );
     }
 
     @AfterClass
     public static void afterClass() {
-    	staticlogger.info("XTest2:afterClass");
+    	staticlogger.info( "XTest2:afterClass" );
+    	log.println( "XTest2:afterClass" );
     }
 
 }
