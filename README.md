@@ -1,5 +1,6 @@
 JUnitSuiteCallOrder
 ===================
+This project uses the Gradle build system.  See the build.gradle file for details on the defined test tasks.
 
 This project is an example of running 3 test classes as a suite in parallel using 3 different methods:
 
@@ -14,9 +15,10 @@ This project is an example of running 3 test classes as a suite in parallel usin
     3. JUnits Test Suite running sequential showing that Gradle
        cannot fork its test tasks: Shows that Gradle cannot fork
        a class that it thinks is a single class from the exterior.
-       (see 
+       (see runSkipSuite Gradle task)
 
+
+Other Info
 =====================
 
-This project includes a runProjectMenu.bat script so that you can run it from the command
-line with little effort.
+This project includes a runProjectMenu.bat script so that you can run it from the command line with little effort.
